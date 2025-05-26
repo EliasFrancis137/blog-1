@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
+}
+body{
+    padding: 0;
+    margin: 0;
+    background: #f6f6f6;
+    font-family: 'Lora', serif;
+}
+header{
+    background:#008489;
+    height: 66px;
+}
+header *{
+    color: white;
+}
+header .logo{
+    float: left;
+    height: inherit; /* Ensures the logo takes the full height of the header */
+    margin-left: 2em; /* Adds space to the left of the logo */
+}
+header .logo-text{
+    margin: 5px; /* Centers the text vertically within the logo */
+    font-family: 'Candal', serif; /* Sets the font for the logo text */
+}
+header .logo-text span{
+    color: #00f7ff;
+}
+header ul{
+    float: right;
+    margin: 0;
+    padding: 0;
+    list-style: none; /* Removes default list styling */
+}
+header ul li{
+    float: left; /* Aligns list items horizontally */
+    position: relative; /* Allows positioning of sub-menus */
+}
+header ul li:hover ul{
+    display: block; /* Shows the sub-menu when hovering over the parent item */
+}
+header ul li ul{
+    position: absolute; /* Positions the sub-menu relative to the parent */
+    top: 66px; /* Aligns the sub-menu below the header */
+    right: 0;
+    width: 180px; /* Sets a fixed width for the sub-menu */
+    display: none; /* Hides the sub-menu by default */
+}
+header ul li ul li{
+    width: 100%; /* Ensures sub-menu items take full width */
+}
+header ul li ul li a{
+    padding: 10px; /* Adds padding for clickable area */
+    color: #444; /* Sets text color for sub-menu links */
+    background: white; /* Sets background color for sub-menu links */
+}
+header ul li ul li a.logout{
+    color: red; /* Sets a different background color for the logout link */
+}
+header ul li ul li a:hover{
+    background: #d5d6d6; /* Changes background color on hover */
+}
+header ul li a{
+    display: block; /* Makes the link fill the entire list item */
+    padding: 21px; /* Adds padding for clickable area */
+    font-size: 1.1em;
+    text-decoration: none; /* Removes underline from links */
+}
+header ul li a:hover{
+    background: #006669; /* Changes background color on hover */
+    transition: 0.5s; /* Smooth transition for background color change */
+}
+header .menu-toggle{
+    display: none;
+}
