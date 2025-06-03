@@ -7,6 +7,15 @@ body{
     background: #f6f6f6;
     font-family: 'Lora', serif;
 }
+h1,h2,h3,h4,h5,h6{
+    font-family: "Candal", serif; /* Sets a specific font for headings */
+    color: #444; /* Sets a default color for headings */
+    margin: 5px;
+}
+a{
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits color from parent element */
+}
 header{
     background:#008489;
     height: 66px;
@@ -45,6 +54,7 @@ header ul li ul{
     right: 0;
     width: 180px; /* Sets a fixed width for the sub-menu */
     display: none; /* Hides the sub-menu by default */
+    z-index: 1000; /* Ensures the sub-menu appears above other content */
 }
 header ul li ul li{
     width: 100%; /* Ensures sub-menu items take full width */
@@ -72,4 +82,107 @@ header ul li a:hover{
 }
 header .menu-toggle{
     display: none;
+}
+.page-wrapper a:hover{
+    color: #006669; /* Changes link color on hover */
+}
+/* Post Slider */
+.post-slider{
+    width: 100%;
+    height: 400px; /* Sets a fixed height for the post slider */
+    overflow: hidden; /* Hides overflow content */
+    position: relative; /* Allows absolute positioning of child elements */
+}
+.post-slide .slider-title{
+    text-align: center; /* Centers the title text */
+    margin: 30px auto; /* Adds space above and below the title */
+}
+.post-slider .next{
+    position: absolute; /* Positions the next button relative to the slider */
+    right: 30px; /* Adds space to the right of the button */
+    top: 50%; /* Centers the button vertically */
+    font-size: 2em; /* Increases font size for better visibility */
+    color: #006669; /* Sets the color for the next button */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+.post-slider .prev{
+    position: absolute; /* Positions the next button relative to the slider */
+    left: 30px; /* Adds space to the right of the button */
+    top: 50%; /* Centers the button vertically */
+    font-size: 2em; /* Increases font size for better visibility */
+    color: #006669; /* Sets the color for the next button */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+}
+.post-slider .post-wrapper{
+    width: 84%;
+    height: 340px; /* Sets a fixed height for the post wrapper */
+    margin: 0px auto; /* Centers the post wrapper horizontally */
+    padding: 10px 0px 10px 0px; /* Adds padding to the top and bottom */
+    overflow: hidden; /* Hides overflow content */
+}
+.post-slider .post-wrapper .post{
+    background: white; /* Sets a background color for each post */
+    border-radius: 5px; /* Rounds the corners of each post */
+    display: inline-block; /* Allows elements to be placed next to each other */
+    width: 300px; /* Sets a fixed width for each post */
+    height: 330px; /* Sets a fixed height for each post */
+    margin: 0 10px; /* Adds space between posts */
+    box-shadow: 1rem 1rem 1rem -1rem #a0a0a033; /* Adds a shadow effect to each post */
+}
+.post-slider .post-wrapper .post .post-info{
+    height: 130px; /* Sets a fixed height for the post info section */
+    padding: 0px 5px; /* Adds padding to the post info section */
+}
+.post-slider .post-wrapper .post .slider-image{
+    background: #f6f6f6; /* Sets a background color for the post image */
+    width: 100%; /* Makes the image fill the entire post width */
+    height: 200px; /* Sets a fixed height for the image */
+    border-top-left-radius: 5px; /* Rounds the top left corner of the image */
+    border-top-right-radius: 5px; /* Rounds the top right corner of the image */
+}
+/* Responsive Design */
+@media only screen and (max-width: 920px){
+
+    header{
+        position: relative;
+    }
+    header ul{
+        width: 100%; /* Makes the menu full width in mobile view */
+        background: #008489; /* Sets background color for the menu */
+        max-height: 0px; /* Hides the menu by default */
+        overflow: hidden; /* Prevents overflow of content */
+    }
+    .showing{
+        max-height: 100em; /* Allows the menu to expand when toggled */
+    }
+    header ul li{
+        width: 100%; /* Makes each menu item full width */
+    }
+    header ul li ul{
+        position: static; /* Positions the sub-menu below the parent item */
+        width: 100%; /* Makes the sub-menu full width */
+        display: block; /* Shows the sub-menu by default in mobile view */
+    }
+    header ul li ul li a{
+        padding: 10px; /* Adds padding for clickable area */
+        background: #008489; /* Sets background color for sub-menu links */
+        color: white; /* Sets text color for sub-menu links */
+        padding-left: 50px; /* Adds padding to align text with the menu toggle */
+    }
+    header ul li ul li a:hover{
+        background: #006669; /* Changes background color on hover for sub-menu links */
+    }
+    header ul li ul li a.logout{
+        color: red; /* Sets a different color for the logout link */
+    }
+    header .menu-toggle{
+        display: block; /* Shows the menu toggle button in mobile view */
+        position: absolute; /* Positions the toggle button relative to the header */
+        right: 20px; /* Adds space to the right of the toggle button */
+        top: 20px; /* Positions the toggle button below the header */
+        font-size: 1.9em; /* Increases font size for better visibility */
+    }
+    header .logo{
+        margin-left: 0.5em; /* Reduces left margin for the logo in mobile view */
+        font-size: 0.9em; /* Adjusts font size for the logo text */    }
 }
